@@ -6,6 +6,7 @@
 
 
 =.=.=.=..=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.==.=.=
+
 Informações que o codigo captura:
 
 Nome Completo;
@@ -18,6 +19,8 @@ Processador;
 Memória RAM;
 Armazenamento;
 Conectividade de Rede;
+
 =.=.=.=..=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.=.==.=.=
+
 
 ScreenShot de ex: ![image](https://github.com/user-attachments/assets/bb406e03-239b-489b-867d-414066c8b178)
