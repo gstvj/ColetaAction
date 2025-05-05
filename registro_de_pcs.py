@@ -7,7 +7,7 @@ from datetime import datetime
 import tkinter as tk
 from tkinter import messagebox, ttk
 
-# Paleta de cores Action Infinte
+# Paleta de cores
 COR_FUNDO = "#1c1f2b"
 COR_PRIMARIA = "#f97300"
 COR_TEXTO = "#f4f4f4"
@@ -74,7 +74,7 @@ def salvar_e_enviar(nome_completo, setor):
 
     data = coletar_info(nome_completo, setor)
     nome_arquivo = f"{nome_completo}-{setor}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
-    pasta_destino = r"\\loja\Arquivos\z.DDGP\REGISTROS\infos"
+    pasta_destino = r"\\loja\Arquivos\z.DDGP\REGISTROS\infos" # deixei para salvar na pasta em um servidor compartilhado da empresa
 
     try:
         os.makedirs(pasta_destino, exist_ok=True)
@@ -87,7 +87,7 @@ def salvar_e_enviar(nome_completo, setor):
         messagebox.showerror("Erro", f"Falha ao salvar arquivo:\n{e}")
 
 # Interface
-caminhoicone = r"\\loja\Arquivos\z.DDGP\REGISTROS\.das\favicon.ico"
+caminhoicone = r"\\loja\Arquivos\z.DDGP\REGISTROS\.das\favicon.ico" # facilitei o reconhecimento para pegar o .ico direto do servidor compartilhado da empresa
 
 janela = tk.Tk()
 janela.iconbitmap(caminhoicone)
@@ -99,7 +99,7 @@ janela.resizable(False, False)
 style = ttk.Style()
 style.theme_use("clam")
 
-# Estilos personalizados
+
 style.configure("Custom.TButton", foreground=COR_BOTAO_TEXTO, background=COR_BOTAO,
                 font=("Segoe UI", 10, "bold"), borderwidth=0)
 style.map("Custom.TButton",
@@ -121,22 +121,18 @@ subtitulo.pack()
 entrada_nome = ttk.Entry(janela, font=("Segoe UI", 11), width=40)
 entrada_nome.pack(pady=(10, 10))
 
-# Setores disponíveis
+# setores registrados para o usuario escolher
 setores = ["➤ Selecione o setor", "Estoque", "Financeiro", "RH", "Suporte", "Compras", "Marketing", "Agendamento", "Comercial", "Recepção", "Pos-venda", "Reversão de cancelamento", "Caixa", "Manutenção carros"]
-#var_setor = tk.StringVar(value=setores[0])
-#seletor = ttk.Combobox(janela, textvariable=var_setor, values=setores, style="Custom.TCombobox", state="readonly", width=37)
-#seletor.pack(pady=(5, 15))
-
 var_setor = tk.StringVar(value=setores[0])
 option_menu = tk.OptionMenu(janela, var_setor, *setores)
-option_menu.config(width=30, font=("Segoe UI", 10), fg="gray")  # muda a cor do texto
+option_menu.config(width=30, font=("Segoe UI", 10), fg="gray")
 option_menu.pack(pady=(5, 15))
 
 botao = ttk.Button(janela, text="Enviar", style="Custom.TButton",
                    command=lambda: salvar_e_enviar(entrada_nome.get(), var_setor.get()))
 botao.pack(pady=(10, 20))
 
-footer = tk.Label(janela, text="v1.0.0 GustavoCarvalho", bg=COR_FUNDO,
+footer = tk.Label(janela, text="v1.0.0 GustavoCarvalho", bg=COR_FUNDO, #meus créditos!
                   fg="#666", font=("Segoe UI", 8))
 footer.pack(side="bottom", pady=5)
 
