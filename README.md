@@ -1,4 +1,4 @@
-# Coleta de informações de PCs para ActiON infinite.
+# Coleta de informações de PCs para uso interno e controle.
 
 - Um simples código com facil entendimento para os colaboradores registrarem as informações atuais do pc/notebook.
 - O código armazena as informações em um arquivo de texto de facil acesso localizado no servidor de arquivos da empresa.
